@@ -1,13 +1,9 @@
 "use strict";
 
-// function calc(a,b) {
-//     return (a + b);
-// }
+const str = "test";
 
-let logger = function() {
-    console.log('Hello');
-};
+console.log(str);
 
-const calc =(a, b) => a + b;
+// console.log(str.length);
 
-console.log(calc(4, 7));
+console.log(str.toUpperCase());
