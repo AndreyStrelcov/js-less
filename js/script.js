@@ -1,41 +1,12 @@
 "use strict";
 
-let numberOfFilms;
-
-function start() {
-    numberOfFilms = prompt('Сколько фильмов вы уже посмотрели?', '');
-
-    while (numberOfFilms == '' || numberOfFilms == null || isNaN(numberOfFilms)) {
-        numberOfFilms = prompt('Сколько фильмов вы уже посмотрели?', '');
-    }
+function learnJS(lang, callback) {
+    console.log(`Я учу: ${lang}`);
+    callback();
 }
 
-start();
-
-const personalMovieDB = {
-    count: numberOfFilms,
-    movies: {},
-    actors: {},
-    genres: [],
-    privat: false
-};
-
-
-function remeberFilms() {
-    for (let i = 0; i < 2; i++) {
-        const a = prompt('Один из последних просмотренных фильмов', ''),
-              b = prompt('На сколько оцените его?', '');
-    
-        if (a != null && b != null && a != '' && b != '' && a.lenhth < 50) {
-            personalMovieDB.movies[a] = b;  
-            console.log('done');
-        } else {
-            console.log('error');
-            --i;
-        }    
-    } 
+function done() {
+    console.log('Я прошел этот урок!');
 }
 
-remeberFilms();
-
-console.log(personalMovieDB); 
+learnJS('JavaScript', done);// Не указываем в функции скобки
