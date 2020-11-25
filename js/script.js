@@ -1,9 +1,41 @@
 "use strict";
 
-const str = "test";
+let numberOfFilms;
 
-console.log(str);
+function start() {
+    numberOfFilms = prompt('Сколько фильмов вы уже посмотрели?', '');
 
-// console.log(str.length);
+    while (numberOfFilms == '' || numberOfFilms == null || isNaN(numberOfFilms)) {
+        numberOfFilms = prompt('Сколько фильмов вы уже посмотрели?', '');
+    }
+}
 
-console.log(str.toUpperCase());
+start();
+
+const personalMovieDB = {
+    count: numberOfFilms,
+    movies: {},
+    actors: {},
+    genres: [],
+    privat: false
+};
+
+
+function remeberFilms() {
+    for (let i = 0; i < 2; i++) {
+        const a = prompt('Один из последних просмотренных фильмов', ''),
+              b = prompt('На сколько оцените его?', '');
+    
+        if (a != null && b != null && a != '' && b != '' && a.lenhth < 50) {
+            personalMovieDB.movies[a] = b;  
+            console.log('done');
+        } else {
+            console.log('error');
+            --i;
+        }    
+    } 
+}
+
+remeberFilms();
+
+console.log(personalMovieDB); 
